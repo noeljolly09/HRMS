@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HRM SignUp</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style/Loginstyle.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="{% static 'img/3.jpg' %}">
+	<div class="container">
+		<div class="img">
+			
+		</div>
+		<div class="login-content">
+			<form action="signup" method="POST">
+
+                {% csrf_token %}
+
+
+				<img src="{% static 'img/avatar.svg' %}">
+				<h2 class="title">Welcome</h2>
+				<h4 class="title">Human Resource Management System</h4>
+				<br>
+                    <div class="input-div one">
+                    <div class="i">
+                            <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                            <input type="text" class="input" placeholder="Username" name="username">
+                    </div>
+                    </div>
+
+                    <div class="input-div one">
+                        <div class="i">
+                                <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                                <input type="text" class="input" placeholder="Name" name="uname">
+                        </div>
+                        </div>
+    
+
+                    <div class="input-div one">
+                        <div class="i">
+                                <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                                <input type="email" class="input" placeholder="Email" name="email">
+                        </div>
+                    </div>
+
+                        
+                    <div class="input-div pass">
+                    <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                            <input type="password" class="input" placeholder="Password" name="p1">
+                    </div>
+                    </div>
+
+                    <div class="input-div pass">
+                        <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            <input type="password" class="input" placeholder="Confirm Password" name="p2">
+                    </div>
+                </div>
+        
+            	<input type="submit" class="btn" value="Signup">
+
+                <a href="login"><h4 style="font-size: large;">Already have account?? Login </h4></a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* General Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    font-size: 10px;
+    box-sizing: border-box;
+  }
+  
+  .banner{  	
+  width:100%;
+  height: 100vh;
+  background-image: url("/static/img/work.jpg");
+  background-size:cover;
+  background-position: center;
+  }
+  
+  
+  /* Navbar Unordered List */
+  .nav__list {
+    width: 20%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(10, 2fr);
+    list-style: none;
+  }
+  
+  /* Navbar List Item */
+  .nav__listItem {
+    cursor: pointer;
+  }
+  
+  /* Navbar List Item Hover Effect */
+  .nav__listItem:hover > .nav__link {
+    background-color: transparent;
+    color:white;
+  }
+  
+  /* Navbar Link */
+  .nav__link {
+    padding: 2rem;
+    font-size: 1.5rem;
+    font-family: Nunito;
+    text-decoration: none;
+    color: #bbe1fa;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+  }
+  
+  /* Navbar List Item With Class of Dropdown*/
+  .nav__dropdown {
+    position: relative;
+  }
+  
+  /* Navbar List Item With Class of Dropdown Hover Effect to Display The Dropdown List */
+  .nav__dropdown:hover .nav__dropdownList {
+    display: block;
+  }
+  
+  /* Navbar Dropdown Unordered List*/
+  .nav__dropdownList {
+    position: absolute;
+    top: 100%;
+    display: none;
+    min-width: 100%;
+    list-style: none;
+  }
+  
+  /* Navbar Dropdown List Item Hover Effect */
+  .nav__dropdownItem:hover > .nav__dropdownLink {
+    background-color: #3282b8;
+    color: #ffffff;
+  }
+  
+  /* Navbar Dropdown Link */
+  .nav__dropdownLink {
+    padding: 2rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-family: Nunito;
+    text-decoration: none;
+    color: #bbe1fa;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+  }
+  

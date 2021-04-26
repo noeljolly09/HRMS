@@ -1,0 +1,145 @@
+
+.transbox{
+  margin: 20px;
+  margin-top: 12%;
+  background-color:#141414 ;
+  border: 8px solid white;
+  border-radius: 25px;
+  opacity:0.9;
+  height:60%;
+}
+
+.transbox h1{
+  font-size: 30px;
+  text-align:center;
+  color: aliceblue;
+  
+}
+
+.Basic{
+  padding-left: 50px;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
+.label_small{
+  margin-left: 50px;
+}
+
+.label{
+  width: 500px;
+  font-size: 25px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.input{
+  position: relative;
+ 
+   line-height: 25px;
+   border-radius: 6px;
+   width: 100%;
+   font-size: 20px;
+   font-family: "Roboto", sans-serif;
+   color: #000;
+   padding-left: 50px;
+   margin-left: 50px;
+}
+
+.option_dropdown{
+  position: relative;
+ 
+   line-height: 25px;
+   border-radius: 6px;
+   width: 100%;
+   font-size: 20px;
+   font-family: "Roboto", sans-serif;
+   color: #000;
+   padding-left: 50px;
+   margin-left: 50px;
+}
+
+
+input[type=submit] {
+  margin-left: 868px;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 30px;
+ }
+
+button{
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 30px;
+  
+}
+
+ .result{
+    padding-left: 60px;
+    color: #ffffff;
+    border-top:1px white solid;
+}
+
+ .result th{
+    
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+ .result tr{
+   
+    color: #ffffff;
+    text-align: center;
+}
+.result td {
+    width: 300px;
+    font-size: 25px;
+    padding-left: 20px;    
+    height: 30px;
+    }
+
+textarea{
+  margin-left: 20%;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  padding: 2%;
+}
+
+select {
+  width: 100%;
+  margin-left: 50px;
+  height: 50px;
+  font-size: 20px ;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color:white;
+  border: 2px solid black;
+  border-radius: 10px;
+  border-bottom: 2px solid #962d22;
+  color: black;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+}
+
+select:hover,
+select:focus {
+  color:black;
+  background-color:white;
+  border-bottom-color: #DCDCDC;
+}

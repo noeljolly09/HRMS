@@ -1,0 +1,205 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style/newmain.css' %}"/>
+    <link rel="stylesheet" href="{% static 'style/other.css' %}">
+    <title>HOME
+    </title>
+  </head>
+  <body>
+        <div class="banner">
+            <nav class="nav">
+
+                <ul class="nav__list">
+        
+                  <li class="nav__listItem">
+                    <a href="dashboard" class="nav__link">Home</a>
+                  </li>
+                  
+                  <li class="nav__listItem nav__dropdown">
+                    <a class="nav__link">Employee</a>
+        
+                    <ul class="nav__dropdownList">
+        
+                      <li class="nav__dropdownItem">
+                        <a href="allemployee" class="nav__dropdownLink">All Employee</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="addemployee" class="nav__dropdownLink">Add Employee</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="removeemployee" class="nav__dropdownLink">Remove Employee</a>
+                      </li>
+                    
+                      
+        
+                    </ul>
+                  
+                  </li>
+                  
+                  <li class="nav__listItem nav__dropdown">
+                    <a href="" class="nav__link">Complain</a>
+        
+                    <ul class="nav__dropdownList">
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="addcomplain" class="nav__dropdownLink">Add Complain/ Suggestions</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="allcomplain" class="nav__dropdownLink">View Complains</a>
+                      </li>
+        
+                    </ul>
+                  
+                  </li>
+        
+                  <li class="nav__listItem nav__dropdown">
+                    <a href="" class="nav__link">Salary</a>
+        
+                    <ul class="nav__dropdownList">
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="allsalary" class="nav__dropdownLink">salary Overview</a>
+                      </li>
+                     
+                    </ul>
+                  
+                  </li>
+        
+        
+                  <li class="nav__listItem nav__dropdown">
+                    <a href="" class="nav__link">Leave</a>
+        
+                    <ul class="nav__dropdownList">
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="applyleave" class="nav__dropdownLink">Apply for leave</a>
+                      </li>
+        
+                      <li class="nav__dropdownItem">
+                        <a href="leaveapproval" class="nav__dropdownLink">leave approval</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="allleave" class="nav__dropdownLink">leave history</a>
+                      </li>
+                     
+                    </ul>
+                  
+                  </li>
+        
+                  <li class="nav__listItem">
+                    <a class="nav__link" >Hello....{{user.first_name}}</a>
+                  </li>
+                  
+                  
+                  
+                  <li class="nav__listItem">
+                    <a href="logout" class="nav__link">Logout</a>
+                  </li>
+              
+                </ul>
+        
+              </nav>
+
+        <div class="transbox">
+
+                <div class="">
+                    <div class="heading">
+                        <br><br>
+                            <h1> Apply For Leave</h1>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <form action="applyleave" method="POST">
+                
+                            {% csrf_token %}
+                            
+                            <table>
+                              <tr>
+                                <td>
+                                  <label class="label">Employee Name</label>
+                              </td>
+                              <th>
+                                <select name="emp_name" class="select-css">
+
+                                  {% for data in things %}
+
+                                  <option class="option_dropdown" value="{{data.id}}">{{data.firstName}}</option>
+
+                                  {% endfor %}
+                                </select>
+                            </th>
+                              </tr>
+                                <tr>
+                                    <td>
+                                        <label class="label">Applied Date</label>
+                                    </td>
+                                    <th>
+                                        <input class="input" type="date" name="name" id="name">
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <label class="label">From Date</label>
+                                    </td>
+                                    <th>
+                                        <input class="input" type="date" name="from" id="from"> 
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <label class="label">To Date</label>
+                                    </td>
+                                    <th>
+                                        <input class="input" type="date" name="to" id="to"> 
+                                    </th>
+                                  </tr>
+                        
+                              </table>
+                                <br><br><br>
+                                <table>
+                                  <tr>
+                                    <td>
+                                      <label class="label">Reason for Leave Appling...</label>
+                                    </td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <th>
+                                      <textarea rows = "6" cols = "90" name = "reason" id="reason"></textarea>
+                                    </th>
+                                  </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td></td>
+                                        <th>
+                                          <a><input type="submit" value="Send"></a>
+                                        </th>
+                                      </tr>
+                                </table>
+                                                
+
+                        </form>>
+                    </div>>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,190 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style/newmain.css' %}"/>
+    <link rel="stylesheet" href="{% static 'style/other.css' %}">
+    <title>HOME
+    </title>
+  </head>
+  <body>
+        <div class="banner">
+            <nav class="nav">
+
+                <ul class="nav__list">
+        
+                  <li class="nav__listItem">
+                    <a href="dashboard" class="nav__link">Home</a>
+                  </li>
+                  
+                  <li class="nav__listItem nav__dropdown">
+                    <a class="nav__link">Employee</a>
+        
+                    <ul class="nav__dropdownList">
+        
+                      <li class="nav__dropdownItem">
+                        <a href="allemployee" class="nav__dropdownLink">All Employee</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="addemployee" class="nav__dropdownLink">Add Employee</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="removeemployee" class="nav__dropdownLink">Remove Employee</a>
+                      </li>
+                    
+                      
+        
+                    </ul>
+                  
+                  </li>
+                  
+                  <li class="nav__listItem nav__dropdown">
+                    <a href="" class="nav__link">Complain</a>
+        
+                    <ul class="nav__dropdownList">
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="addcomplain" class="nav__dropdownLink">Add Complain/ Suggestions</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="allcomplain" class="nav__dropdownLink">View Complains</a>
+                      </li>
+        
+                    </ul>
+                  
+                  </li>
+        
+                  <li class="nav__listItem nav__dropdown">
+                    <a href="" class="nav__link">Salary</a>
+        
+                    <ul class="nav__dropdownList">
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="allsalary" class="nav__dropdownLink">salary Overview</a>
+                      </li>
+                     
+                    </ul>
+                  
+                  </li>
+        
+        
+                  <li class="nav__listItem nav__dropdown">
+                    <a href="" class="nav__link">Leave</a>
+        
+                    <ul class="nav__dropdownList">
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="applyleave" class="nav__dropdownLink">Apply for leave</a>
+                      </li>
+        
+                      <li class="nav__dropdownItem">
+                        <a href="leaveapproval" class="nav__dropdownLink">leave approval</a>
+                      </li>
+                     
+                      <li class="nav__dropdownItem">
+                        <a href="allleave" class="nav__dropdownLink">leave history</a>
+                      </li>
+                     
+                    </ul>
+                  
+                  </li>
+        
+                  <li class="nav__listItem">
+                    <a class="nav__link" >Hello....{{user.first_name}}</a>
+                  </li>
+                  
+                  
+                  
+                  <li class="nav__listItem">
+                    <a href="logout" class="nav__link">Logout</a>
+                  </li>
+              
+                </ul>
+        
+              </nav>
+
+        <div class="transbox">
+
+                <div class="">
+                    <div class="heading">
+                        <br>
+                            <h1> Remove Employee</h1>
+                    </div>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                            <form action="removeemployee" method="POST">
+                    
+                                {% csrf_token %}
+                    
+                                <table>
+                                    <tr>
+                                    <td>
+                                        <label class="label">Employee Id</label>
+                                    </td>
+                                    <th>
+                                        <input class="input" type="text" name="empid" id="empid" >
+                                    </th>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td></td>
+                                        <th>
+                                            <input type="submit" value="Remove">
+                                        </th>
+                                    </tr>
+                                </table>
+                                                    
+
+                            </form>>
+                        <div>
+                            <div class="result">
+                                <br>
+                                  <table id="table" >
+                                      <tr>
+                                        <th>
+                                              Employee Id
+                                        </th>
+                                        <th>
+                                               First Name
+                                        </th>
+                                        <th>
+                                            Last Name
+                                     </th>
+                                        <th>
+                                                email
+                                        </th>
+                                        <th>
+                                                phonenumber
+                                        </th>
+                                      </tr>
+                                      
+                                      {% for data in details %}
+
+                                      <tr>
+                                        
+                                                <td>{{ data.id}}</td>
+                                                <td> {{ data.firstName}}</td>
+                                                <td> {{ data.lastName}}</td>
+                                                <td>{{ data.email}}</td>
+                                                <td>{{ data.phoneNumber}}</td>
+
+                                      </tr>
+                                      {% endfor %}  
+                                  
+                                  </table>
+                        </div>
+
+                    </div>>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>

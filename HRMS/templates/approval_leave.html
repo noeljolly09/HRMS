@@ -1,0 +1,175 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style/newmain.css' %}"/>
+    <link rel="stylesheet" href="{% static 'style/other.css' %}">
+    <title>HOME
+    </title>
+  </head>
+  <body>
+        <div class="banner">
+        <nav class="nav">
+
+        <ul class="nav__list">
+
+          <li class="nav__listItem">
+            <a href="dashboard" class="nav__link">Home</a>
+          </li>
+          
+          <li class="nav__listItem nav__dropdown">
+            <a class="nav__link">Employee</a>
+
+            <ul class="nav__dropdownList">
+
+              <li class="nav__dropdownItem">
+                <a href="allemployee" class="nav__dropdownLink">All Employee</a>
+              </li>
+             
+              <li class="nav__dropdownItem">
+                <a href="addemployee" class="nav__dropdownLink">Add Employee</a>
+              </li>
+             
+              <li class="nav__dropdownItem">
+                <a href="removeemployee" class="nav__dropdownLink">Remove Employee</a>
+              </li>
+            
+              
+
+            </ul>
+          
+          </li>
+          
+          <li class="nav__listItem nav__dropdown">
+            <a href="" class="nav__link">Complain</a>
+
+            <ul class="nav__dropdownList">
+             
+              <li class="nav__dropdownItem">
+                <a href="addcomplain" class="nav__dropdownLink">Add Complain/ Suggestions</a>
+              </li>
+             
+              <li class="nav__dropdownItem">
+                <a href="allcomplain" class="nav__dropdownLink">View Complains</a>
+              </li>
+
+            </ul>
+          
+          </li>
+
+          <li class="nav__listItem nav__dropdown">
+            <a href="" class="nav__link">Salary</a>
+
+            <ul class="nav__dropdownList">
+             
+              <li class="nav__dropdownItem">
+                <a href="allsalary" class="nav__dropdownLink">salary Overview</a>
+              </li>
+             
+            </ul>
+          
+          </li>
+
+
+          <li class="nav__listItem nav__dropdown">
+            <a href="" class="nav__link">Leave</a>
+
+            <ul class="nav__dropdownList">
+             
+              <li class="nav__dropdownItem">
+                <a href="applyleave" class="nav__dropdownLink">Apply for leave</a>
+              </li>
+
+              <li class="nav__dropdownItem">
+                <a href="leaveapproval" class="nav__dropdownLink">leave approval</a>
+              </li>
+             
+              <li class="nav__dropdownItem">
+                <a href="allleave" class="nav__dropdownLink">leave history</a>
+              </li>
+             
+            </ul>
+          
+          </li>
+
+          <li class="nav__listItem">
+            <a class="nav__link" >Hello....{{user.first_name}}</a>
+          </li>
+          
+          
+          
+          <li class="nav__listItem">
+            <a href="logout" class="nav__link">Logout</a>
+          </li>
+      
+        </ul>
+
+      </nav>
+
+        <div class="transbox">
+
+                <div class="">
+                    <div class="heading">
+                            <h1> Approval of Leave Request </h1>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <form action="leaveapproval" method="POST">
+                
+                            {% csrf_token %}
+                            <div class="result">
+                                <table id="table" >
+                                    <tr>
+                                      <th>
+                                        Employee Name
+                                </th>
+                                    <th>
+                                            Applied Date
+                                    </th>
+                                    <th>
+                                        From Date
+                                    </th>
+                                    <th>
+                                        To Date
+                                </th>
+                                    <th>
+                                            Reason
+                                    </th>
+                                    <th>
+                                        Status
+                                </th>
+                                    </tr>
+                                    
+                                    {% for data in details %}
+
+                                    <tr>
+                                            <td>{{data.employee.firstName}}</td>
+                                            <td>{{ data.apply_date}}</td>
+                                            <td> {{ data.from_date}}</td>
+                                            <td> {{ data.to_date}}</td>
+                                            <td>{{ data.Reason}}</td>
+                                            <td>{{ data.status}}</td>
+                                            
+
+                                            <td><a href="accept/{{data.id}}"><button type="button" >Accept</button></a>
+                                              <a href="reject/{{data.id}}"><button type="button" >Reject</button></a>
+                                            </td>
+
+                                    </tr>
+                                    {% endfor %}  
+                                
+                                </table>
+                            </div>                    
+
+                        </form>>
+                    </div>>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>
